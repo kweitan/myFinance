@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>黑客帝国效果</title>
+</head>
+<style type="text/css">
+    body{
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+</style>
+<body>
+<canvas id="canvas"></canvas>
+
+<script type="text/javascript">
+    //创建画板
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    //设置高度
+    canvas.height = window.innerHeight;
+    //设置宽度
+    canvas.width = window.innerWidth;
+    //搞一堆字母+数字+特殊符号
+    var texts = '034fghijklm56789abcdpq,?/FGHIuveNOP<>";|rstnowxyzABC12DEVWXYZ[$#*&^~QRSTU*]'.split('');
+
+    //设置字体大小
+    var fontSize = 18;
+    //表示一行可以放下多少个字符
+    var columns = canvas.width/fontSize;
+    // 用于计算输出文字时坐标，所以长度即为列数
+    var drops = [];
+    //初始值
+    for(var x = 0; x < columns; x++){
+        drops[x] = 1;
+    }
+
+    function draw(){
+        //让背景逐渐由透明到不透明
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        //文字颜色
+        ctx.fillStyle = '#0F0';
+        ctx.font = fontSize + 'px Georgia';
+        //逐行输出文字
+        for(var i = 0; i < drops.length; i++){
+            var text = texts[Math.floor(Math.random()*texts.length)];
+
+            //Math.random() > 0.95 这里表示每一列有5%概率走不到最后一行
+            if(drops[i]*fontSize > canvas.height || Math.random() > 0.95){
+                ctx.fillStyle = '#55f555';
+                ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+                ctx.fillStyle = '#0F0';
+                drops[i] = 0;
+            }
+            ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+
+            drops[i]++;
+        }
+    }
+    //每30毫秒输出一行
+    setInterval(draw, 30);
+</script>
+</body>
+
