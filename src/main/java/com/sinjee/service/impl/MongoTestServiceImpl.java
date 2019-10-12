@@ -5,7 +5,6 @@ import com.sinjee.dto.MongoTestDto;
 import com.sinjee.entity.MongoTestEntity;
 import com.sinjee.service.MongoTestService;
 import com.sinjee.tools.BeanConversionUtils;
-import com.sinjee.tools.PageModel;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -68,7 +67,7 @@ public class MongoTestServiceImpl implements MongoTestService {
 
     @Override
     public MongoTestDto findMongoTestById(Integer id) {
-        MongoTestEntity mongoTestEntity = mongoTestEntity = mongoTestDao.findMongoTestById(id) ;
+        MongoTestEntity mongoTestEntity = mongoTestDao.findMongoTestById(id) ;
         MongoTestDto resultDto = null ;
         if (null != mongoTestEntity){
             resultDto = new MongoTestDto() ;

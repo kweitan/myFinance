@@ -16,10 +16,18 @@ public class User {
 
     private String userName ;
 
-    private String sex ;
+    private int sex ;
 
     public String toString(){
         return "id:"+id+";userName:"+userName+";sex:"+sex ;
     }
+
+    public User(int id,String userName,int sex){
+        this.id = id ;
+        this.userName = userName ;
+        this.sex = sex ;
+    }
+
+    public User(){}
 
 }

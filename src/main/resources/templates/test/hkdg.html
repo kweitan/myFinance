@@ -24,7 +24,6 @@
     canvas.width = window.innerWidth;
     //搞一堆字母+数字+特殊符号
     var texts = '034fghijklm56789abcdpq,?/FGHIuveNOP<>";|rstnowxyzABC12DEVWXYZ[$#*&^~QRSTU*]'.split('');
-
     //设置字体大小
     var fontSize = 18;
     //表示一行可以放下多少个字符
@@ -35,7 +34,6 @@
     for(var x = 0; x < columns; x++){
         drops[x] = 1;
     }
-
     function draw(){
         //让背景逐渐由透明到不透明
         ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
@@ -46,16 +44,14 @@
         //逐行输出文字
         for(var i = 0; i < drops.length; i++){
             var text = texts[Math.floor(Math.random()*texts.length)];
-
-            //Math.random() > 0.95 这里表示每一列有5%概率走不到最后一行
-            if(drops[i]*fontSize > canvas.height || Math.random() > 0.95){
+            //Math.random() > 0.95 这里表示每一列有3%概率执行不到最后一行
+            if(drops[i]*fontSize > canvas.height || Math.random() > 0.97){
                 ctx.fillStyle = '#55f555';
                 ctx.fillText(text, i*fontSize, drops[i]*fontSize);
                 ctx.fillStyle = '#0F0';
                 drops[i] = 0;
             }
             ctx.fillText(text, i*fontSize, drops[i]*fontSize);
-
             drops[i]++;
         }
     }

@@ -32,14 +32,14 @@ public class BeanConversionUtils {
     public static <T,F> List<F> listCopyToAnotherList(Class<F> target, List<T> sourceList){
         if (!CollectionUtils.isEmpty(sourceList)) {
             List<F> targetList = new ArrayList();
-            for (T t : sourceList) {
-                try{
+            try{
+                for (T t : sourceList) {
                     F f = target.newInstance();
                     BeanUtils.copyProperties(t,f);
                     targetList.add(f) ;
-                }catch (Exception e){
-                    log.error(e.getMessage());
                 }
+            }catch (Exception e){
+                log.error(e.getMessage());
             }
             return targetList ;
         }else {
