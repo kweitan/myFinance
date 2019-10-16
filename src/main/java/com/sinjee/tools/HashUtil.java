@@ -6,7 +6,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import java.io.UnsupportedEncodingException;
 
 /**
- * 单向散列算法
+ * 单向散列算法(指纹算法，以防止篡改)
  * 不推荐使用(MD5 SHA1)
  * 推荐使用SHA256
  */
