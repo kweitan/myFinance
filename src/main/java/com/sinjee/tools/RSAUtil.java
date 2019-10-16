@@ -67,13 +67,14 @@ import java.security.spec.X509EncodedKeySpec;
 public class RSAUtil {
     /**
      * RSA最大加密明文大小
+     * 1024/8-11 或者 2048/8-11
      */
-    private static final int MAX_ENCRYPT_BLOCK = 245;
+    private static final int MAX_ENCRYPT_BLOCK = 117;
 
     /**
      * RSA最大解密密文大小
      */
-    private static final int MAX_DECRYPT_BLOCK = 256;
+    private static final int MAX_DECRYPT_BLOCK = 128;
 
     /**
      * 单向散列加密SHA256
@@ -88,7 +89,7 @@ public class RSAUtil {
     /**
      * 加密长度 RSA 2048 1024
      */
-    private static final int MAX_LENGTH = 2048 ;
+    private static final int MAX_LENGTH = 1024 ;
 
     /**
      * 非对称加密算法
