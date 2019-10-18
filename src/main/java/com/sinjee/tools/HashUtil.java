@@ -1,6 +1,7 @@
 package com.sinjee.tools;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import java.io.UnsupportedEncodingException;
@@ -23,6 +24,23 @@ public class HashUtil {
     public static String sign(String text, String key, String charset) {
         text = text + key;
         return DigestUtils.sha256Hex(getContentBytes(text, charset));
+    }
+
+    /**
+     * 签名的字符串
+     * @param text
+     * @param charset
+     * @return
+     * @throws Exception
+     */
+    public static String signKey(String text,String charset){
+        String result = null ;
+        try {
+            result = Base64.encodeBase64String(DigestUtils.sha256(text.getBytes(charset)));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return result ;
     }
 
     /**
