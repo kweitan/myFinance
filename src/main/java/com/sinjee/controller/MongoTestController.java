@@ -2,7 +2,6 @@ package com.sinjee.controller;
 
 import com.sinjee.dto.MongoTestDto;
 import com.sinjee.service.MongoTestService;
-import com.sinjee.tools.PageModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
