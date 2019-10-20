@@ -38,19 +38,24 @@ public class ZhangTingAnalysisDao {
     /**
      * 根据交易日期 连扳数 获取数据
      * @param tradeDate
-     * @param lianbanNum
+     * @param zhangtingNum
      * @param page
      * @param size
      * @return
      */
-    public Page<ZhangTingAnalysisEntity> getPageByTradeDate(String tradeDate,int lianbanNum,int page, int size){
+    public Page<ZhangTingAnalysisEntity> getPageByTradeDate(int tradeDate,int zhangtingNum,int page, int size){
 
         Pageable pageable = PageRequest.of(page,size);
 
         //创建查询对象
-        Query query = new Query(Criteria.where("trade_date").is(tradeDate).and("isLianban").gte(lianbanNum));
+//        Criteria criteria = Criteria
+//                Criteria.where("trade_date").is(tradeDate).andOperator(Criteria.where("zhangtingNum").gte(zhangtingNum)) ;
 
-        query.with(pageable) ;
+        Criteria criteria = new Criteria();
+        criteria.andOperator(Criteria.where("trade_date").is(tradeDate),Criteria.where("zhangtingNum").gte(zhangtingNum)) ;
+        Query query = new Query(criteria);
+
+//        query.with(pageable) ;
 
         //查询当前页数据集合
         List<ZhangTingAnalysisEntity> list = mongoTemplate.find(query,ZhangTingAnalysisEntity.class) ;

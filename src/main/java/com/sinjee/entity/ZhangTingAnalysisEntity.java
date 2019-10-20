@@ -17,34 +17,34 @@ public class ZhangTingAnalysisEntity extends BaseEntity implements Serializable 
     private String ts_code ;
 
     //交易日期
-    private String trade_date ;
+    private int trade_date ;
 
     //开盘价
-    private String open ;
+    private double open ;
 
     //最高价
-    private String high ;
+    private double high ;
 
     //最低价
-    private String low ;
+    private double low ;
 
     //收盘价
-    private String close ;
+    private double close ;
 
     //上一个交易日收盘价
-    private String pre_close ;
+    private double pre_close ;
 
     //涨跌额
-    private String change ;
+    private double change ;
 
     //涨跌幅
-    private String pct_chg ;
+    private double pct_chg ;
 
     //成交量 （手）
-    private String vol ;
+    private double vol ;
 
     //成交额 （千元）
-    private String amount ;
+    private double amount ;
 
     //股票名称
     private String stockName ;
@@ -56,7 +56,7 @@ public class ZhangTingAnalysisEntity extends BaseEntity implements Serializable 
     private String industry ;
 
     //上市日期
-    private String list_date ;
+    private int list_date ;
 
     //是否涨停
     private int isZhangting ;
@@ -77,7 +77,7 @@ public class ZhangTingAnalysisEntity extends BaseEntity implements Serializable 
     private int isZhaban ;
 
     //吃面数量
-    private int eatBreadNum ;
+    private double eatBreadNum ;
 
     //是否实体涨停
     private int isZTShiti ;
@@ -89,7 +89,7 @@ public class ZhangTingAnalysisEntity extends BaseEntity implements Serializable 
     private int isDTT ;
 
     //涨停大长腿
-    private int ZTBigLeg ;
+    private double ZTBigLeg ;
 
     //是否大长腿
     private int isBigLeg ;
@@ -98,7 +98,7 @@ public class ZhangTingAnalysisEntity extends BaseEntity implements Serializable 
     private int isEatZTBread ;
 
     //是摸到到涨停后回落吃大面的状态幅度
-    private int isEatZTBreadLen ;
+    private double isEatZTBreadLen ;
 
     //是否是涨停开盘炸板
     private int isFitBaopo ;
@@ -113,7 +113,7 @@ public class ZhangTingAnalysisEntity extends BaseEntity implements Serializable 
     private int ZTKsize ;
 
     //计算开盘涨幅
-    private int OpenLen ;
+    private double OpenLen ;
 
     //连扳数量包括缩量 一字板
     private int isLianban ;

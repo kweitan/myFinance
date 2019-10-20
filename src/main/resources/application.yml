@@ -22,3 +22,11 @@ server:
 
 
 
+
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core: DEBUG

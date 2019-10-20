@@ -28,11 +28,11 @@ public class ZhangTingAnalysisController {
     private ZhangTingAnalysisService zhangTingAnalysisService ;
 
     @GetMapping("/list")
-    public ResultVo<List<ZhangTingAnalysisDto>> list(@RequestParam(value = "tradeDate") String tradeDate,
-                                                @RequestParam(value = "tradeDate") Integer lianbanNum,
+    public ResultVo<List<ZhangTingAnalysisDto>> list(@RequestParam(value = "tradeDate") Integer tradeDate,
+                                                    @RequestParam(value = "zhangtingNum") Integer zhangtingNum,
                                                     @RequestParam(value = "page", defaultValue = "0") Integer page,
                                                      @RequestParam(value = "size", defaultValue = "10") Integer size){
-        Page<ZhangTingAnalysisDto> pageImpl = zhangTingAnalysisService.getPageByTradeDate(tradeDate,lianbanNum,page,size) ;
+        Page<ZhangTingAnalysisDto> pageImpl = zhangTingAnalysisService.getPageByTradeDate(tradeDate,zhangtingNum,page,size) ;
         ResultVo<List<ZhangTingAnalysisDto>> result = new ResultVo<List<ZhangTingAnalysisDto>>() ;
         result.setCode(200);
         result.setMsg("成功");

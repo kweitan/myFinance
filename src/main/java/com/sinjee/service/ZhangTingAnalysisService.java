@@ -13,5 +13,5 @@ public interface ZhangTingAnalysisService {
      * @param size
      * @return
      */
-    public Page<ZhangTingAnalysisDto> getPageByTradeDate(String tradeDate, int lianbanNum, int page, int size) ;
+    public Page<ZhangTingAnalysisDto> getPageByTradeDate(int tradeDate, int zhangtingNum, int page, int size) ;
 }
