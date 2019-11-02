@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 /**
  * @author 小小极客
  * 时间 2019/10/19 23:42
- * @ClassName ZhangTingAnalysisServiceImplTest
+ * ZhangTingAnalysisServiceImplTest
  * 描述 Service测试类
  **/
 @RunWith(SpringRunner.class)

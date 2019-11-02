@@ -11,7 +11,7 @@ import java.io.Serializable;
  * 描述 涨停分析数据库实体类
  **/
 @Data
-public class ZhangTingAnalysisEntity extends BaseEntity implements Serializable {
+public class ZhangTingAnalysisEntity implements Serializable {
 
     //股票代码
     private String ts_code ;
