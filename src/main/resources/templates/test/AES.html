@@ -1,0 +1,57 @@
+<html>
+<head>
+    <script src = "aes.min.js"></script>
+    <script>
+        //（需要先加载aes.min.js文件）
+        // 建议此文件需要混淆源代码
+
+        // AES 秘钥
+        var AesKey = "Test-AES-CBC-128";
+
+        // AES-128-CBC偏移量
+        var CBCIV = "1234567890123456";
+
+        // 加密选项
+        var CBCOptions = {
+            iv: CryptoJS.enc.Utf8.parse(CBCIV),
+            mode:CryptoJS.mode.CBC,
+            padding: CryptoJS.pad.Pkcs7
+        }
+
+        /**
+         * AES加密（CBC模式，需要偏移量）
+         * @param data
+         * @returns {*}
+         */
+        function encrypt(data){
+            var key = CryptoJS.enc.Utf8.parse(AesKey);
+            var secretData = CryptoJS.enc.Utf8.parse(data);
+            var encrypted = CryptoJS.AES.encrypt(
+                secretData,
+                key,
+                CBCOptions
+            );
+            return encrypted.toString();
+        }
+
+        /**
+         * AES解密（CBC模式，需要偏移量）
+         * @param data
+         * @returns {*}
+         */
+        function decrypt(data){
+            var key = CryptoJS.enc.Utf8.parse(AesKey);
+            var decrypt = CryptoJS.AES.decrypt(
+                data,
+                key,
+                CBCOptions
+            );
+            return CryptoJS.enc.Utf8.stringify(decrypt).toString();
+        }
+
+        alert("encodeData="+encrypt("123456"));
+    </script>
+</head>
+<body>
+</body>
+</html>
