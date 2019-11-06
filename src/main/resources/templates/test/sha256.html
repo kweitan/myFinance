@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="message digest, secure hash algorithm, hash, security, Kryptographie, cryptography, crypto, SHA256, SHA, SHA2, JavaScript, Javascript, JS">
+    <title>sha256加密算法实现测试</title>
+    <script type="text/javascript" src="sha256.js"></script>
+    <style type="text/css">
+        body{
+            height: 100%;
+            width: 100%
+        }
+    </style>
+</head>
+<body>
+<form>
+    <table cellspacing="1" cellpadding="4" border="0" bgcolor="#eeeeee" align="center">
+        <tbody><tr>
+            <td valign="top"><b>您输入的数据：</b></td><td><textarea name="yourinput" cols="55" rows="3"></textarea></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td><td><input type="button" value="点击转换" onclick="javascript:this.form.yourhash.value=sha256_digest(this.form.yourinput.value)"></td>
+        </tr><tr>
+            <td><b>sha256的值:<b></b></b></td>
+            <td><input type="text" name="yourhash" size="75"></td>
+        </tr>
+        </tbody></table>
+</form>
+</body>
+</html>
