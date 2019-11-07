@@ -65,16 +65,6 @@ import java.security.spec.X509EncodedKeySpec;
  * 密钥长度的设置就是上面例子的第32行。可自行调整，当然非对称加密随着密钥变长，安全性上升的同时性能也会有所下降。
  */
 public class RSAUtil {
-    /**
-     * RSA最大加密明文大小
-     * 1024/8-11 或者 2048/8-11
-     */
-    private static final int MAX_ENCRYPT_BLOCK = 117;
-
-    /**
-     * RSA最大解密密文大小
-     */
-    private static final int MAX_DECRYPT_BLOCK = 128;
 
     /**
      * 单向散列加密SHA256
@@ -95,6 +85,17 @@ public class RSAUtil {
      * 非对称加密算法
      */
     private static final String ALGORITHM_TYPE = "RSA" ;
+
+    /**
+     * RSA最大加密明文大小
+     * 1024/8-11 或者 2048/8-11
+     */
+    private static final int MAX_ENCRYPT_BLOCK = MAX_LENGTH/8 - 11;
+
+    /**
+     * RSA最大解密密文大小
+     */
+    private static final int MAX_DECRYPT_BLOCK = MAX_LENGTH/8;
 
     /**
      * 获取密钥对
