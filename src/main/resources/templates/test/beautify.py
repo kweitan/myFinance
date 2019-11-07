@@ -166,7 +166,7 @@ def fetch_auth_token(api_key, secret_key):
 
 
 def init_face_detective(app_id, api_key, secret_key):
-    # client = AipFace(app_id, api_key, secret_key)
+    # client = AipFaceUtil(app_id, api_key, secret_key)
     # 百度云 V3 版本接口，需要先获取 access token
     token = fetch_auth_token(api_key, secret_key)
 
@@ -214,3 +214,49 @@ while url is not None:
 
 
     # vim: set ts=4 sw=4 sts=4 tw=100 et:
+
+
+    "E:\Program Files\Java\jdk1.8.0_181\bin\java.exe" -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:54796,suspend=y,server=n -javaagent:C:\Users\pc\.IntelliJIdea2018.3\system\captureAgent\debugger-agent.jar -Dfile.encoding=UTF-8 -classpath "E:\Program Files\Java\jdk1.8.0_181\jre\lib\charsets.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\deploy.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\access-bridge-64.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\cldrdata.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\dnsns.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\jaccess.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\jfxrt.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\localedata.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\nashorn.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunec.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunjce_provider.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunmscapi.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunpkcs11.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\zipfs.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\javaws.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\jce.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\jfr.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\jfxswt.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\jsse.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\management-agent.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\plugin.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\resources.jar;E:\Program Files\Java\jdk1.8.0_181\jre\lib\rt.jar;G:\project\myFinance\target\classes;F:\repository\org\springframework\boot\spring-boot-starter-web\2.1.9.RELEASE\spring-boot-starter-web-2.1.9.RELEASE.jar;F:\repository\org\springframework\boot\spring-boot-starter\2.1.9.RELEASE\spring-boot-starter-2.1.9.RELEASE.jar;F:\repository\org\springframework\boot\spring-boot\2.1.9.RELEASE\spring-boot-2.1.9.RELEASE.jar;F:\repository\org\springframework\boot\spring-boot-autoconfigure\2.1.9.RELEASE\spring-boot-autoconfigure-2.1.9.RELEASE.jar;F:\repository\org\springframework\boot\spring-boot-starter-logging\2.1.9.RELEASE\spring-boot-starter-logging-2.1.9.RELEASE.jar;F:\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;F:\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;F:\repository\org\apache\logging\log4j\log4j-to-slf4j\2.11.2\log4j-to-slf4j-2.11.2.jar;F:\repository\org\slf4j\jul-to-slf4j\1.7.28\jul-to-slf4j-1.7.28.jar;F:\repository\org\yaml\snakeyaml\1.23\snakeyaml-1.23.jar;F:\repository\org\springframework\boot\spring-boot-starter-json\2.1.9.RELEASE\spring-boot-starter-json-2.1.9.RELEASE.jar;F:\repository\com\fasterxml\jackson\core\jackson-databind\2.9.9.3\jackson-databind-2.9.9.3.jar;F:\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;F:\repository\com\fasterxml\jackson\core\jackson-core\2.9.9\jackson-core-2.9.9.jar;F:\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.9.9\jackson-datatype-jdk8-2.9.9.jar;F:\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.9.9\jackson-datatype-jsr310-2.9.9.jar;F:\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.9.9\jackson-module-parameter-names-2.9.9.jar;F:\repository\org\hibernate\validator\hibernate-validator\6.0.17.Final\hibernate-validator-6.0.17.Final.jar;F:\repository\javax\validation\validation-api\2.0.1.Final\validation-api-2.0.1.Final.jar;F:\repository\org\jboss\logging\jboss-logging\3.3.3.Final\jboss-logging-3.3.3.Final.jar;F:\repository\com\fasterxml\classmate\1.4.0\classmate-1.4.0.jar;F:\repository\org\springframework\spring-web\5.1.10.RELEASE\spring-web-5.1.10.RELEASE.jar;F:\repository\org\springframework\spring-webmvc\5.1.10.RELEASE\spring-webmvc-5.1.10.RELEASE.jar;F:\repository\org\springframework\spring-context\5.1.10.RELEASE\spring-context-5.1.10.RELEASE.jar;F:\repository\org\springframework\spring-expression\5.1.10.RELEASE\spring-expression-5.1.10.RELEASE.jar;F:\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar;F:\repository\org\slf4j\slf4j-api\1.7.28\slf4j-api-1.7.28.jar;F:\repository\org\springframework\spring-core\5.1.10.RELEASE\spring-core-5.1.10.RELEASE.jar;F:\repository\org\springframework\spring-jcl\5.1.10.RELEASE\spring-jcl-5.1.10.RELEASE.jar;F:\repository\org\springframework\boot\spring-boot-starter-data-mongodb\2.1.9.RELEASE\spring-boot-starter-data-mongodb-2.1.9.RELEASE.jar;F:\repository\org\mongodb\mongodb-driver\3.8.2\mongodb-driver-3.8.2.jar;F:\repository\org\mongodb\bson\3.8.2\bson-3.8.2.jar;F:\repository\org\mongodb\mongodb-driver-core\3.8.2\mongodb-driver-core-3.8.2.jar;F:\repository\org\springframework\data\spring-data-mongodb\2.1.11.RELEASE\spring-data-mongodb-2.1.11.RELEASE.jar;F:\repository\org\springframework\spring-tx\5.1.10.RELEASE\spring-tx-5.1.10.RELEASE.jar;F:\repository\org\springframework\data\spring-data-commons\2.1.11.RELEASE\spring-data-commons-2.1.11.RELEASE.jar;F:\repository\io\netty\netty-all\4.1.6.Final\netty-all-4.1.6.Final.jar;F:\repository\org\springframework\boot\spring-boot-starter-freemarker\2.1.9.RELEASE\spring-boot-starter-freemarker-2.1.9.RELEASE.jar;F:\repository\org\freemarker\freemarker\2.3.29\freemarker-2.3.29.jar;F:\repository\org\springframework\spring-context-support\5.1.10.RELEASE\spring-context-support-5.1.10.RELEASE.jar;F:\repository\commons-codec\commons-codec\1.9\commons-codec-1.9.jar;F:\repository\org\springframework\spring-aop\5.1.10.RELEASE\spring-aop-5.1.10.RELEASE.jar;F:\repository\org\springframework\spring-beans\5.1.10.RELEASE\spring-beans-5.1.10.RELEASE.jar;F:\repository\org\aspectj\aspectjrt\1.9.2\aspectjrt-1.9.2.jar;F:\repository\org\aspectj\aspectjweaver\1.9.2\aspectjweaver-1.9.2.jar;F:\repository\com\google\code\gson\gson\2.8.1\gson-2.8.1.jar;F:\repository\org\apache\logging\log4j\log4j-nosql\2.9.0\log4j-nosql-2.9.0.jar;F:\repository\org\apache\logging\log4j\log4j-core\2.11.2\log4j-core-2.11.2.jar;F:\repository\org\apache\logging\log4j\log4j-api\2.11.2\log4j-api-2.11.2.jar;F:\repository\com\baidu\aip\java-sdk\4.4.0\java-sdk-4.4.0.jar;F:\repository\org\json\json\20160810\json-20160810.jar;F:\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;E:\Program Files\JetBrains\IntelliJ IDEA 2018.3.6\lib\idea_rt.jar" com.sinjee.faces.Client
+Connected to the target VM, address: '127.0.0.1:54796', transport: 'socket'
+0 [main] INFO com.baidu.aip.client.BaseClient  - get access_token success. current state: STATE_AIP_AUTH_OK
+6 [main] DEBUG com.baidu.aip.client.BaseClient  - current state after check priviledge: STATE_TRUE_AIP_USER
+{
+    "result": {
+        "face_num": 1,
+        "face_list": [{
+            "gender": {
+                "probability": 1,
+                "type": "female"
+            },
+            "beauty": 88.36,
+            "liveness": {"livemapscore": 0.93},
+            "angle": {
+                "roll": 25.81,
+                "pitch": 11.99,
+                "yaw": -11.92
+            },
+            "face_token": "cc73d040ac47ae0588fec95540d8c011",
+            "location": {
+                "top": 75.05,
+                "left": 258.31,
+                "rotation": 26,
+                "width": 171,
+                "height": 162
+            },
+            "face_probability": 1,
+            "age": 22
+        }]
+    },
+    "log_id": 744193231417490091,
+    "error_msg": "SUCCESS",
+    "cached": 0,
+    "error_code": 0,
+    "timestamp": 1573141749
+}
+Disconnected from the target VM, address: '127.0.0.1:54796', transport: 'socket'
+
+Process finished with exit code 0
+
+https://ai.baidu.com/docs#/Face-Java-SDK/top
+
+
