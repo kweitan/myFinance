@@ -14,7 +14,7 @@ public class FaceListDTO {
 
     private Gender gender ; //性别，face_field包含gender时返回
 
-    private Integer beauty ; //美丑打分，范围0-100，越大表示越美。当face_fields包含beauty时返回
+    private double beauty ; //美丑打分，范围0-100，越大表示越美。当face_fields包含beauty时返回
 
     private double age ; //年龄
 

@@ -25,6 +25,10 @@ public class AipFaceUtil {
     private AipFaceUtil(){
         // 初始化一个AipFace
         this.aipFace = new AipFace(APP_ID, API_KEY, SECRET_KEY);
+
+        // 可选：设置网络连接参数
+        this.aipFace.setConnectionTimeoutInMillis(2000);
+        this.aipFace.setSocketTimeoutInMillis(60000);
     }
 
     public AipFace getAipFace(){
