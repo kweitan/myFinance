@@ -1,11 +1,14 @@
 package com.sinjee.faces;
 
+import lombok.Data;
+
 /**
  * @author 小小极客
  * 时间 2019/11/8 0:03
  * @ClassName FaceListDTO
  * 描述 人脸信息列表，具体包含的参数参考下面的列表。
  **/
+@Data
 public class FaceListDTO {
 
     private String face_token ; //人脸图片的唯一标识
@@ -17,6 +20,8 @@ public class FaceListDTO {
     private double beauty ; //美丑打分，范围0-100，越大表示越美。当face_fields包含beauty时返回
 
     private double age ; //年龄
+
+    private double face_probability ; //置信度
 
 
 }
