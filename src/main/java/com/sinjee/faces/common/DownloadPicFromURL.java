@@ -14,7 +14,7 @@ import java.net.URL;
  **/
 public class DownloadPicFromURL {
     //链接url下载图片
-    public static void downloadPicture(String urlList,String path) {
+    public static synchronized void downloadPicture(String urlList,String path) {
         URL url = null;
         DataInputStream dataInputStream = null ;
         FileOutputStream fileOutputStream = null ;

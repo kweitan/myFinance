@@ -6,6 +6,7 @@ import com.sinjee.faces.AipFaceUtil;
 import com.sinjee.faces.FaceListDTO;
 import com.sinjee.faces.common.DownloadPicFromURL;
 import com.sinjee.faces.common.GsonUtil;
+import com.sinjee.tools.DateUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
@@ -19,7 +20,7 @@ import java.util.HashMap;
  * @author 小小极客
  * 时间 2019/11/8 21:38
  * @ClassName CrawlerImageInfo
- * 描述 TODO
+ * 描述 启动爬虫
  **/
 @Slf4j
 public class CrawlerImageInfo implements Runnable {
@@ -30,7 +31,7 @@ public class CrawlerImageInfo implements Runnable {
 
     public void handlerInfo(String mainUrl){
 
-        String path="G:/file/beautify/";
+        String path="G:/data/beautify/";
 
         //http://www.umei.cc/p/gaoqing/cn/
         Document doc = null ;
@@ -47,7 +48,7 @@ public class CrawlerImageInfo implements Runnable {
             if (i == 1){
                 doc = getJsoupPage(mainUrl) ;
             }else {
-                doc = getJsoupPage(mainUrl+i+"htm") ;
+                doc = getJsoupPage(mainUrl+i+".htm") ;
             }
             if(null != doc){
                 Elements liEles = doc.select("div[class=wrap] div[class=TypeList] ul li") ;
@@ -65,7 +66,6 @@ public class CrawlerImageInfo implements Runnable {
 
                             // 人脸检测
                             JSONObject res = client.detect(imgUrl, imageType, options);
-//                            System.out.println(res.toString(2));
 
                             //先判断是否成功
                             if (null != res && res.getString("error_msg").equals("SUCCESS")){
@@ -78,14 +78,12 @@ public class CrawlerImageInfo implements Runnable {
                                 }
 
                                 for (FaceListDTO faceListDTO:aipFaceDTO.getFace_list()){
-
                                     //人脸置信度太低
                                     if (faceListDTO.getFace_probability() < 0.6){
                                         continue;
                                     }
 
                                     //颜值低于50
-
                                     if (faceListDTO.getBeauty() < 50){
                                         continue;
                                     }
@@ -96,7 +94,7 @@ public class CrawlerImageInfo implements Runnable {
                                     }
 
                                     //成功下载图片 title imgUrl title_faceListDTO.getBeauty()_.jpg
-                                    DownloadPicFromURL.downloadPicture(imgUrl,path+title+"_"+faceListDTO.getBeauty()+".jpg");
+                                    DownloadPicFromURL.downloadPicture(imgUrl,path+ DateUtils.getCurrentDate()+"_"+faceListDTO.getBeauty()+".jpg");
                                     break ;
                                 }
 
@@ -109,7 +107,6 @@ public class CrawlerImageInfo implements Runnable {
                             sleep(10000);
                         }
                     }
-                    continue ;
                 }
                 i++ ;
             }else {
@@ -126,7 +123,7 @@ public class CrawlerImageInfo implements Runnable {
         while (count < 5) {
             count++;
             try {
-                String referrer = "http://news.qq.com/";
+                String referrer = "http://www.umei.cc/";
                 doc = Jsoup
                         .connect(url)
                         .userAgent(
