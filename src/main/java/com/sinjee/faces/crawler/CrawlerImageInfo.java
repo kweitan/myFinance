@@ -31,7 +31,7 @@ public class CrawlerImageInfo implements Runnable {
 
     public void handlerInfo(String mainUrl){
 
-        String path="G:/data/beautify/";
+        String path="G:/file/beautify/";
 
         //http://www.umei.cc/p/gaoqing/cn/
         Document doc = null ;
@@ -44,6 +44,7 @@ public class CrawlerImageInfo implements Runnable {
         options.put("max_face_num", "2");
         options.put("face_type", "LIVE");
         options.put("liveness_control", "LOW");
+
         while(true){
             if (i == 1){
                 doc = getJsoupPage(mainUrl) ;
@@ -55,17 +56,32 @@ public class CrawlerImageInfo implements Runnable {
                 if(liEles.size()>0){
                     for (Element liEle:liEles) {
                         Element imgEle = liEle.select("a[class=TypeBigPics] img").first() ;
+                        Element aEle = liEle.select("a[class=TypeBigPics]").first() ;
                         Element titleEle = liEle.select("a[class=TypeBigPics] div[class=ListTit]").first() ;
-                        if(null != imgEle && null != titleEle){
+                        if(null != imgEle && null != titleEle && null != aEle){
                             String imgUrl = imgEle.attr("src") ;
+                            String aUrl = aEle.attr("href") ;
                             String title = titleEle.text();
-                            log.info("imgUrl={}",imgUrl);
+                            String newImageUrl = "" ;
+                            Document subDoc = getJsoupPage(aUrl) ;
+                            if (null != subDoc){
+                                Element imageElement = subDoc.select("div[class=ImageBody] p a img").first();
+                                if (null != imageElement){
+                                    newImageUrl = imageElement.attr("src") ;
+                                }else {
+                                    continue;
+                                }
+                            }else {
+                                continue;
+                            }
+
+                            log.info("imgUrl={}",newImageUrl);
 
                             //人脸识别 开始
                             String imageType = "URL";
 
                             // 人脸检测
-                            JSONObject res = client.detect(imgUrl, imageType, options);
+                            JSONObject res = client.detect(newImageUrl, imageType, options);
 
                             //先判断是否成功
                             if (null != res && res.getString("error_msg").equals("SUCCESS")){
@@ -94,7 +110,7 @@ public class CrawlerImageInfo implements Runnable {
                                     }
 
                                     //成功下载图片 title imgUrl title_faceListDTO.getBeauty()_.jpg
-                                    DownloadPicFromURL.downloadPicture(imgUrl,path+ DateUtils.getCurrentDate()+"_"+faceListDTO.getBeauty()+".jpg");
+                                    DownloadPicFromURL.downloadPicture(newImageUrl,path+ DateUtils.getCurrentDate()+"_"+faceListDTO.getBeauty()+".jpg");
                                     break ;
                                 }
 

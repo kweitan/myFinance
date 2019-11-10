@@ -26,7 +26,7 @@ public class DownloadPicFromURL {
             fileOutputStream = new FileOutputStream(new File(path));
             output = new ByteArrayOutputStream();
 
-            byte[] buffer = new byte[1024];
+            byte[] buffer = new byte[2048];
             int length;
 
             while ((length = dataInputStream.read(buffer)) > 0) {
