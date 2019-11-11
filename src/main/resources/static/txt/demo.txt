@@ -81,6 +81,13 @@ public class AESCrypt {
     }
 
 =============================================================================================================================
+var str = CryptoJS.enc.Utf8.parse("张");
+var base64 = CryptoJS.enc.Base64.stringify(str);
+// base64 = 5byg
+var words = CryptoJS.enc.Base64.parse("5byg");
+var parseStr = words.toString(CryptoJS.enc.Utf8);
+// parseStr = 张
+
 // AES 加密，AES-128, AES-192, AES-256
 // AES-128: key和iv都是16个字节，16*8=128bit
 // AES-192: key和iv都是24个字节，24*8=128bit
@@ -287,3 +294,43 @@ var Base64=
 		return t
 	}
 };
+================================================================================================================================
+final Base64 base64 = new Base64();
+final String text = "字串文字";
+final byte[] textByte = text.getBytes("UTF-8");
+//编码
+final String encodedText = base64.encodeToString(textByte);
+System.out.println(encodedText);
+//解码
+System.out.println(new String(base64.decode(encodedText), "UTF-8"));
+
+final Base64 base64 = new Base64();
+final String text = "字串文字";
+final byte[] textByte = text.getBytes("UTF-8");
+//编码
+final String encodedText = base64.encodeToString(textByte);
+System.out.println(encodedText);
+//解码
+System.out.println(new String(base64.decode(encodedText), "UTF-8"));
+
+Java 8的java.util套件中，新增了Base64的类别，可以用来处理Base64的编码与解码，用法如下：
+final Base64.Decoder decoder = Base64.getDecoder();
+final Base64.Encoder encoder = Base64.getEncoder();
+final String text = "字串文字";
+final byte[] textByte = text.getBytes("UTF-8");
+//编码
+final String encodedText = encoder.encodeToString(textByte);
+System.out.println(encodedText);
+//解码
+System.out.println(new String(decoder.decode(encodedText), "UTF-8"));
+
+final Base64.Decoder decoder = Base64.getDecoder();
+final Base64.Encoder encoder = Base64.getEncoder();
+final String text = "字串文字";
+final byte[] textByte = text.getBytes("UTF-8");
+//编码
+final String encodedText = encoder.encodeToString(textByte);
+System.out.println(encodedText);
+//解码
+System.out.println(new String(decoder.decode(encodedText), "UTF-8"));
+与sun.mis c套件和Apache Commons Codec所提供的Base64编解码器来比较的话，Java 8提供的Base64拥有更好的效能。实际测试编码与解码速度的话，Java 8提供的Base64，要比sun.mis c套件提供的还要快至少11倍，比Apache Commons Codec提供的还要快至少3倍。因此在Java上若要使用Base64，这个Java 8底下的java .util套件所提供的Base64类别绝对是首选！
