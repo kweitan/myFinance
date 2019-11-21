@@ -89,7 +89,7 @@ public class CrawlerImageInfo implements Runnable {
                                 AipFaceDTO aipFaceDTO = GsonUtil.json2Bean(result,AipFaceDTO.class);
 
                                 //没有人脸
-                                if (aipFaceDTO.getFace_num() == 0){
+                                if (null != aipFaceDTO && aipFaceDTO.getFace_num() == 0){
                                     continue ;
                                 }
 

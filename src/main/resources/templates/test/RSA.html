@@ -25,6 +25,7 @@
                 var uncrypted = decrypt.decrypt(encrypted);
 
                 console.log(uncrypted) ;
+                $('#uncrypted').val(encrypted) ;
 
                 // Now a simple check to see if the round-trip worked.
                 if (uncrypted == $('#input').val()) {
@@ -64,5 +65,6 @@ gwQco1KRMDSmXSMkDwIDAQAB
 <label for="input">Text to encrypt:</label><br/>
 <textarea id="input" name="input" type="text" rows=4 cols=70>This is a test!</textarea><br/>
 <input id="testme" type="button" value="Test Me!!!" /><br/>
+<textarea id="uncrypted" name="uncrypted" type="text" rows=4 cols=70></textarea><br/>
 </body>
 </html>
