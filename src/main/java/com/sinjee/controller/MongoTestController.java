@@ -14,11 +14,11 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Map;
 
 /**
- * @ClassName MongoTestController
- * @Description MongoTestController控制层
- * @Author pc
- * @Date 2019/10/6 16:32
- * @Version 1.0
+ * @className MongoTestController
+ * @description MongoTestController控制层
+ * @author pc
+ * @date 2019/10/6 16:32
+ * @version 1.0
  **/
 @Controller
 @RequestMapping("/MongoTest")
