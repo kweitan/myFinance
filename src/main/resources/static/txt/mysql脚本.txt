@@ -1,0 +1,26 @@
+CREATE TABLE `test_null` (
+  `id` int(11) DEFAULT NULL,
+  `mark` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+create procedure test_null(in num int)
+BEGIN
+DECLARE i int;
+set i=1;
+while (i<num)
+DO
+  if mod(i,10)!=0 then
+     insert into test_null values (i,concat('aaa',i));
+   else
+     insert into test_null values (null,concat('aaa',i));
+   end if;
+set i=i+1;
+END while;
+END;
+
+call test_null(10000);
+
+
+
+
