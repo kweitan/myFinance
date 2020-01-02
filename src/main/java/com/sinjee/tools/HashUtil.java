@@ -17,12 +17,12 @@ public class HashUtil {
     /**
      * 签名字符
      * @param text 签名的字符串
-     * @param key 密钥
+     * @param salt 盐值
      * @param charset 编码格式
      * @return 签名结果
      */
-    public static String sign(String text, String key, String charset) {
-        text = text + key;
+    public static String sign(String text, String salt, String charset) {
+        text = text + salt;
         return DigestUtils.sha256Hex(getContentBytes(text, charset));
     }
 
@@ -47,12 +47,12 @@ public class HashUtil {
      * 签名字符
      * @param text 签名的字符串
      * @param sign 签名结果
-     * @param key 密钥
+     * @param salt 盐值
      * @param charset 编码格式
      * @return 签名结果
      */
-    public static boolean verify(String text, String key,String charset,String sign) {
-        text = text + key;
+    public static boolean verify(String text, String salt,String charset,String sign) {
+        text = text + salt;
         String mysign = DigestUtils.sha256Hex(getContentBytes(text, charset));
         if(mysign.equals(sign)) {
             return true;

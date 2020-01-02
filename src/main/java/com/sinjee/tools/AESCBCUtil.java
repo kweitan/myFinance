@@ -28,6 +28,8 @@ public class AESCBCUtil {
 
     private static final String IV = "OSIDJF5934853940" ;
 
+    private static final String CHARSET_NAME = "UTF-8" ;
+
     /**
      * AES 加密操作
      *
@@ -36,8 +38,8 @@ public class AESCBCUtil {
      * @return 返回Base64转码后的加密数据
      */
     public static String encrypt(String content, String encryptPass) throws Exception{
-        byte[] contentByte = content.getBytes("UTF-8") ;
-        byte[] encryptPassByte = encryptPass.getBytes("UTF-8") ;
+        byte[] contentByte = content.getBytes(CHARSET_NAME) ;
+        byte[] encryptPassByte = encryptPass.getBytes(CHARSET_NAME) ;
 
         SecretKeySpec secretKeySpec = new SecretKeySpec(encryptPassByte,KEY_ALGORITHM);
         Cipher cipher = Cipher.getInstance(DEFAULT_CIPHER_ALGORITHM);
@@ -57,7 +59,7 @@ public class AESCBCUtil {
      */
     public static String decrypt(String base64Content, String encryptPass) throws Exception{
         byte[] contentByte = Base64.decodeBase64(base64Content);
-        byte[] encryptPassByte = encryptPass.getBytes("UTF-8") ;
+        byte[] encryptPassByte = encryptPass.getBytes(CHARSET_NAME) ;
 
         SecretKeySpec secretKeySpec = new SecretKeySpec(encryptPassByte,KEY_ALGORITHM);
         Cipher cipher = Cipher.getInstance(DEFAULT_CIPHER_ALGORITHM);
