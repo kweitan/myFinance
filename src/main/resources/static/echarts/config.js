@@ -9,7 +9,7 @@
   encoding: "UTF-8",
 
   // 每个时间节点最多显示的条目数。
-  max_number: 20,
+  max_number: 30,
 
   // 控制是否显示顶部附加信息文字。
   showMessage: true,
@@ -53,10 +53,10 @@
 
   // 附加信息内容。
   // left label
-  itemLabel: "左侧文字",
+  itemLabel: "",
 
   // right label
-  typeLabel: "右侧文字",
+  typeLabel: "国外疫情发展过程",
 
   // 榜首项目信息的水平位置 。
   // Top item information horizontal location
@@ -71,7 +71,7 @@
   // 右侧文字横坐标
   text_x: 1000,
   // 偏移量
-  offset: 350,
+  offset: 500,
 
   // 长度小于display_barInfo的bar将不显示barInfo。
   // Hide barInfo if bar is shorter than barInfo
@@ -152,11 +152,11 @@
   // 图片路径，本地图片或者网上图片。
   // 也可在imgs.js中配置。
   imgs: {
-    item:
-      "http://i1.hdslb.com/bfs/face/983034448f81f45f05956d0455a86fe0639d6a36.jpg",
-    条目:
-      "http://i1.hdslb.com/bfs/face/983034448f81f45f05956d0455a86fe0639d6a36.jpg",
-    任意名称: "path/to/img"
+    // item:
+    //   "http://i1.hdslb.com/bfs/face/983034448f81f45f05956d0455a86fe0639d6a36.jpg",
+    // 条目:
+    //   "http://i1.hdslb.com/bfs/face/983034448f81f45f05956d0455a86fe0639d6a36.jpg", //
+    // 任意名称: "path/to/img"
   },
 
   // 全局背景颜色
