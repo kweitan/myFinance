@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<title>The States of Pools</title>
+<style>
+    body {
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+
+    #chart {
+        margin-left: 0px;
+        height: 706px;
+    }
+
+    text {
+        font: 10px sans-serif;
+    }
+
+    .dot:hover {
+        stroke: #FFF;
+        stroke-width:2px;
+    }
+
+    .axis path,.axis line {
+        fill: none;
+        stroke: gray;
+        shape-rendering: crispEdges;
+    }
+
+    .axis text {
+        stroke: gray;
+    }
+
+    .label {
+        fill: #777;
+    }
+
+    .calendar.label {
+        font: 30px "Arial,Verdana,Sans-serif";
+        fill: white;
+    }
+
+    .calendar.label.active {
+        fill: lightgreen;
+    }
+
+    .overlay {
+        fill: none;
+        pointer-events: all;
+        cursor: ew-resize;
+    }
+</style>
+<p id="chart"></p>
+<script src="./jquery-3.2.1.slim.min.js"></script>
+<script src="./d3.v5.min.js"></script>
+<script>
+    // Various accessors that specify the four dimensions of data to visualize.
+    function x(d) {
+        return d.traffic;
+    }
+    function y(d) {
+        return d.cpu;
+    }
+    function radius(d) {
+        return d.size;
+    }
+    function color(d) {
+        return d.domain;
+    }
+    function key(d) {
+        return d.name;
+    }
+    function visual(data){
+        // Chart dimensions.
+        var margin = {
+                top : 39.5,
+                right : 19.5,
+                bottom : 39.5,
+                left : 39.5},
+            width = $(window).width() - 100 - margin.right,
+            height = $(window).height()	- 50 - margin.top - margin.bottom;
+
+        //various scales, based on the minimun and maximun of each property.
+        var xScale = d3.scale.log().domain([min(data,"traffic"), max(data,"traffic")]).range([ 0, width ]),
+            yScale = d3.scale.linear().domain([ 0, max(data,"cpu") ]).range([ height, 0 ]),
+            radiusScale = d3.scale.sqrt().domain([min(data,"size"), max(data,"size")]).range([ 3, 40 ]),
+            colorScale = d3.scale.category20();
+
+        // The x & y axes.
+        var xAxis = d3.svg.axis().orient("bottom").scale(xScale).ticks(20,d3.format(",d")),
+            yAxis = d3.svg.axis().scale(yScale).orient("left");
+
+        // Create the SVG container and set the origin.
+        var svg = d3.select("#chart").append("svg")
+            .attr("width",width + margin.left + margin.right)
+            .attr("height",height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform","translate(" + margin.left + "," + margin.top + ")");
+
+        // Add the x-axis.
+        svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform","translate(0," + height + ")")
+            .call(xAxis);
+
+        // Add the y-axis.
+        svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxis);
+
+        // Add an x-axis label.
+        svg.append("text")
+            .attr("class", "x label")
+            .attr("text-anchor", "end")
+            .attr("x", width)
+            .attr("y", height - 6)
+            .text("Traffic (BPS)");
+
+        // Add a y-axis label.
+        svg.append("text")
+            .attr("class", "y label")
+            .attr("text-anchor", "end")
+            .attr("y", 6).attr("dy", ".75em")
+            .attr("transform", "rotate(-90)")
+            .text("CPU usage (%)");
+
+        // Add the time label; the value is set on transition.
+        var label = svg.append("text").attr("class", "calendar label")
+            .attr("text-anchor", "end")
+            .attr("y", height - 24)
+            .attr("x", width)
+            .text(data[0].calendar);
+
+        var box = label.node().getBBox();
+        var overlay = svg.append("rect")
+            .attr("class", "overlay")
+            .attr("x", box.x)
+            .attr("y", box.y)
+            .attr("width", box.width)
+            .attr("height", box.height)
+            .on("mouseover", enableInteraction);
+
+        var timerId = 0;
+        function enableInteraction(){
+            var timeScale = d3.scale.linear()
+                .domain([0, data.length-1])
+                .range([box.x + 10, box.x + box.width - 10])
+                .clamp(true);
+            // Cancel the current transition, if any.
+            if(timerId){
+                clearInterval(timerId);
+            }
+            overlay.on("mouseover", mouseover)
+                .on("mouseout", mouseout)
+                .on("mousemove", mousemove)
+                .on("touchmove", mousemove);
+            function mouseover() {
+                label.classed("active", true);
+            }
+            function mouseout() {
+                label.classed("active", false);
+            }
+            function mousemove() {
+                tweenMinute(Math.round(timeScale.invert(d3.mouse(this)[0])));
+            }
+        }
+
+        // Add a dot per node. Initialize the data with data[0].data, and set the colors.
+        var dot = svg.append("g")
+            .attr("class", "dots")
+            .selectAll(".dot")
+            .data(data[0].values)
+            .enter()
+            .append("circle")
+            .attr("class","dot")
+            .style("fill", function(d) {
+                return colorScale(color(d));
+            })
+            .call(position)
+            .sort(order);
+
+        // Add a title.
+        dot.append("title")
+            .text(function(d) { return d.name; });
+
+        // Positions the dots based on data.
+        function position(dot) {
+            dot.attr("cx", function(d) { return xScale(x(d)); })
+                .attr("cy", function(d) { return yScale(y(d)); })
+                .attr("r", function(d) { return radiusScale(radius(d)); });
+        }
+
+        // Defines a sort order so that the smallest dots are drawn on top.
+        function order(a, b) {
+            return radius(b) - radius(a);
+        }
+
+        // Start a transition that interpolates the data based on year.
+        var i = 0;
+        timerId = setInterval(function(){
+            if(i<data.length){
+                tweenMinute(i);
+                i++;
+            }
+            else{
+                clearInterval(this);
+            }
+        },200);
+
+        function tweenMinute(i) {
+            dot.data(data[i].values)
+                .style("fill", function(d) {
+                    return colorScale(color(d));
+                })
+                .call(position)
+                .sort(order);
+            label.text(data[i].calendar);
+        }
+    }
+    //get the minimun property of all nodes in order to scale the size and position of circles.
+    function min(data, prop) {
+        var length = data.length;
+        var mins = [];
+        for (var i = 0; i < length; i++) {
+            var min = d3.min(data[i].values, function(d) {
+                if (prop == "size")
+                    return d.size;
+                else if (prop == "traffic")
+                    return d.traffic;
+                else if (prop == "cpu")
+                    return d.cpu;
+            });
+            mins.push(min);
+        }
+        return d3.min(mins);
+    }
+    //get the maximun property of all nodes in order to scale the size and position of circles.
+    function max(data, prop) {
+        var length = data.length;
+        var maxs = [];
+        for (var i = 0; i < length; i++) {
+            var max = d3.max(data[i].values, function(d) {
+                if (prop == "size")
+                    return d.size;
+                else if (prop == "traffic")
+                    return d.traffic;
+                else if (prop == "cpu")
+                    return d.cpu;
+            });
+            maxs.push(max);
+        }
+        return d3.max(maxs);
+    }
+
+    // Load the data.
+    d3.json("poolStates.json", function(data) {
+        console.log(data);
+        visual(data);
+    });
+</script>
