@@ -56,7 +56,7 @@
   itemLabel: "",
 
   // right label
-  typeLabel: "国外疫情发展过程",
+  typeLabel: "海外疫情发展过程",
 
   // 榜首项目信息的水平位置 。
   // Top item information horizontal location

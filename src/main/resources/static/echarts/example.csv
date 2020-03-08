@@ -2,31 +2,42 @@ name,type,value,date
 新加坡,Singapore,7,2020-01-28
 新加坡,Singapore,10,2020-01-29
 新加坡,Singapore,16,2020-01-30
+新加坡,Singapore,16,2020-01-31
 新加坡,Singapore,18,2020-02-01
+新加坡,Singapore,18,2020-02-02
+新加坡,Singapore,18,2020-02-03
 新加坡,Singapore,24,2020-02-04
 新加坡,Singapore,28,2020-02-05
 新加坡,Singapore,30,2020-02-06
 新加坡,Singapore,33,2020-02-07
 新加坡,Singapore,40,2020-02-08
+新加坡,Singapore,40,2020-02-09
 新加坡,Singapore,45,2020-02-10
 新加坡,Singapore,47,2020-02-11
 新加坡,Singapore,50,2020-02-12
 新加坡,Singapore,58,2020-02-13
 新加坡,Singapore,67,2020-02-14
+新加坡,Singapore,67,2020-02-15
 新加坡,Singapore,72,2020-02-16
 新加坡,Singapore,75,2020-02-17
 新加坡,Singapore,81,2020-02-18
 新加坡,Singapore,84,2020-02-19
+新加坡,Singapore,84,2020-02-20
 新加坡,Singapore,85,2020-02-21
 新加坡,Singapore,89,2020-02-22
+新加坡,Singapore,89,2020-02-23
 新加坡,Singapore,90,2020-02-24
+新加坡,Singapore,90,2020-02-25
 新加坡,Singapore,93,2020-02-26
+新加坡,Singapore,93,2020-02-27
 新加坡,Singapore,96,2020-02-28
 新加坡,Singapore,102,2020-02-29
 新加坡,Singapore,106,2020-03-01
 新加坡,Singapore,108,2020-03-02
 新加坡,Singapore,110,2020-03-03
 新加坡,Singapore,112,2020-03-04
+新加坡,Singapore,117,2020-03-05
+新加坡,Singapore,130,2020-03-06
 伊朗,Iran,2,2020-02-19
 伊朗,Iran,5,2020-02-20
 伊朗,Iran,18,2020-02-21
@@ -38,21 +49,39 @@ name,type,value,date
 伊朗,Iran,245,2020-02-27
 伊朗,Iran,388,2020-02-28
 伊朗,Iran,593,2020-02-29
+伊朗,Iran,1501,2020-03-01
 伊朗,Iran,1501,2020-03-02
 伊朗,Iran,2336,2020-03-03
 伊朗,Iran,2922,2020-03-04
+伊朗,Iran,3513,2020-03-05
+伊朗,Iran,4747,2020-03-06
 美国,United States,5,2020-01-28
 美国,United States,5,2020-01-29
 美国,United States,6,2020-01-30
+美国,United States,6,2020-01-31
 美国,United States,7,2020-02-01
 美国,United States,8,2020-02-02
 美国,United States,11,2020-02-03
+美国,United States,11,2020-02-04
+美国,United States,11,2020-02-05
 美国,United States,12,2020-02-06
+美国,United States,12,2020-02-07
+美国,United States,12,2020-02-08
+美国,United States,12,2020-02-09
+美国,United States,12,2020-02-10
 美国,United States,13,2020-02-11
 美国,United States,13,2020-02-12
 美国,United States,14,2020-02-13
 美国,United States,15,2020-02-14
+美国,United States,15,2020-02-15
+美国,United States,15,2020-02-16
+美国,United States,15,2020-02-17
+美国,United States,15,2020-02-18
+美国,United States,15,2020-02-19
+美国,United States,15,2020-02-20
+美国,United States,15,2020-02-21
 美国,United States,34,2020-02-22
+美国,United States,34,2020-02-23
 美国,United States,35,2020-02-24
 美国,United States,53,2020-02-25
 美国,United States,57,2020-02-26
@@ -63,6 +92,8 @@ name,type,value,date
 美国,United States,89,2020-03-02
 美国,United States,105,2020-03-03
 美国,United States,126,2020-03-04
+美国,United States,161,2020-03-05
+美国,United States,234,2020-03-06
 日本本土,Japan,7,2020-01-28
 日本本土,Japan,8,2020-01-29
 日本本土,Japan,13,2020-01-30
@@ -100,6 +131,11 @@ name,type,value,date
 日本本土,Japan,274,2020-03-02
 日本本土,Japan,293,2020-03-03
 日本本土,Japan,326,2020-03-04
+日本本土,Japan,331,2020-03-05
+日本本土,Japan,416,2020-03-06
+意大利,Italy,0,2020-01-28
+意大利,Italy,0,2020-01-29
+意大利,Italy,0,2020-01-30
 意大利,Italy,2,2020-01-31
 意大利,Italy,2,2020-02-01
 意大利,Italy,2,2020-02-02
@@ -134,12 +170,38 @@ name,type,value,date
 意大利,Italy,1713,2020-03-02
 意大利,Italy,2086,2020-03-03
 意大利,Italy,2546,2020-03-04
+意大利,Italy,3089,2020-03-05
+意大利,Italy,3927,2020-03-06
+英国,United Kingdom,2,2020-01-28
+英国,United Kingdom,2,2020-01-29
+英国,United Kingdom,2,2020-01-30
 英国,United Kingdom,2,2020-01-31
+英国,United Kingdom,2,2020-02-01
+英国,United Kingdom,2,2020-02-02
+英国,United Kingdom,2,2020-02-03
+英国,United Kingdom,2,2020-02-04
+英国,United Kingdom,2,2020-02-05
 英国,United Kingdom,3,2020-02-06
+英国,United Kingdom,3,2020-02-07
+英国,United Kingdom,3,2020-02-08
+英国,United Kingdom,3,2020-02-09
 英国,United Kingdom,8,2020-02-10
+英国,United Kingdom,8,2020-02-11
+英国,United Kingdom,8,2020-02-12
 英国,United Kingdom,9,2020-02-13
+英国,United Kingdom,9,2020-02-14
+英国,United Kingdom,9,2020-02-15
 英国,United Kingdom,9,2020-02-16
+英国,United Kingdom,9,2020-02-17
+英国,United Kingdom,9,2020-02-18
+英国,United Kingdom,9,2020-02-19
+英国,United Kingdom,9,2020-02-20
+英国,United Kingdom,9,2020-02-21
+英国,United Kingdom,9,2020-02-22
+英国,United Kingdom,9,2020-02-23
 英国,United Kingdom,13,2020-02-24
+英国,United Kingdom,13,2020-02-25
+英国,United Kingdom,13,2020-02-26
 英国,United Kingdom,15,2020-02-27
 英国,United Kingdom,19,2020-02-28
 英国,United Kingdom,23,2020-02-29
@@ -147,12 +209,36 @@ name,type,value,date
 英国,United Kingdom,40,2020-03-02
 英国,United Kingdom,51,2020-03-03
 英国,United Kingdom,85,2020-03-04
+英国,United Kingdom,90,2020-03-05
+英国,United Kingdom,163,2020-03-06
 法国,France,3,2020-01-28
 法国,France,4,2020-01-29
 法国,France,6,2020-01-30
+法国,France,6,2020-01-31
+法国,France,6,2020-02-01
+法国,France,6,2020-02-02
+法国,France,6,2020-02-03
+法国,France,6,2020-02-04
+法国,France,6,2020-02-05
+法国,France,6,2020-02-06
+法国,France,6,2020-02-07
 法国,France,11,2020-02-08
+法国,France,11,2020-02-09
+法国,France,11,2020-02-10
+法国,France,11,2020-02-11
+法国,France,11,2020-02-12
+法国,France,11,2020-02-13
+法国,France,11,2020-02-14
 法国,France,11,2020-02-15
 法国,France,12,2020-02-16
+法国,France,12,2020-02-17
+法国,France,12,2020-02-18
+法国,France,12,2020-02-19
+法国,France,12,2020-02-20
+法国,France,12,2020-02-21
+法国,France,12,2020-02-22
+法国,France,12,2020-02-23
+法国,France,12,2020-02-24
 法国,France,12,2020-02-25
 法国,France,17,2020-02-26
 法国,France,18,2020-02-27
@@ -162,18 +248,37 @@ name,type,value,date
 法国,France,130,2020-03-02
 法国,France,204,2020-03-03
 法国,France,257,2020-03-04
+法国,France,377,2020-03-05
+法国,France,577,2020-03-06
 德国,Germany,1,2020-01-28
 德国,Germany,4,2020-01-29
+德国,Germany,4,2020-01-30
 德国,Germany,6,2020-01-31
 德国,Germany,7,2020-02-01
 德国,Germany,10,2020-02-02
+德国,Germany,10,2020-02-03
 德国,Germany,12,2020-02-04
+德国,Germany,12,2020-02-05
+德国,Germany,12,2020-02-06
 德国,Germany,13,2020-02-07
+德国,Germany,13,2020-02-08
 德国,Germany,14,2020-02-09
+德国,Germany,14,2020-02-10
+德国,Germany,14,2020-02-11
 德国,Germany,16,2020-02-12
+德国,Germany,16,2020-02-13
 德国,Germany,16,2020-02-14
+德国,Germany,16,2020-02-15
+德国,Germany,16,2020-02-16
+德国,Germany,16,2020-02-17
 德国,Germany,16,2020-02-18
+德国,Germany,16,2020-02-19
+德国,Germany,16,2020-02-20
+德国,Germany,16,2020-02-21
+德国,Germany,16,2020-02-22
+德国,Germany,16,2020-02-23
 德国,Germany,16,2020-02-24
+德国,Germany,16,2020-02-25
 德国,Germany,19,2020-02-26
 德国,Germany,27,2020-02-27
 德国,Germany,60,2020-02-28
@@ -182,6 +287,8 @@ name,type,value,date
 德国,Germany,157,2020-03-02
 德国,Germany,196,2020-03-03
 德国,Germany,240,2020-03-04
+德国,Germany,349,2020-03-05
+德国,Germany,565,2020-03-06
 韩国,Korea,4,2020-01-28
 韩国,Korea,4,2020-01-29
 韩国,Korea,6,2020-01-30
@@ -219,12 +326,44 @@ name,type,value,date
 韩国,Korea,4335,2020-03-02
 韩国,Korea,5186,2020-03-03
 韩国,Korea,5621,2020-03-04
+韩国,Korea,6088,2020-03-05
+韩国,Korea,6593,2020-03-06
+西班牙,Spain,0,2020-01-28
+西班牙,Spain,0,2020-01-29
+西班牙,Spain,0,2020-01-30
+西班牙,Spain,0,2020-01-31
 西班牙,Spain,2,2020-02-01
+西班牙,Spain,2,2020-02-02
+西班牙,Spain,2,2020-02-03
+西班牙,Spain,2,2020-02-04
+西班牙,Spain,2,2020-02-05
+西班牙,Spain,2,2020-02-06
+西班牙,Spain,2,2020-02-07
+西班牙,Spain,2,2020-02-08
+西班牙,Spain,2,2020-02-09
+西班牙,Spain,2,2020-02-10
+西班牙,Spain,2,2020-02-11
+西班牙,Spain,2,2020-02-12
+西班牙,Spain,2,2020-02-13
+西班牙,Spain,2,2020-02-14
+西班牙,Spain,2,2020-02-15
+西班牙,Spain,2,2020-02-16
+西班牙,Spain,2,2020-02-17
+西班牙,Spain,2,2020-02-18
+西班牙,Spain,2,2020-02-19
+西班牙,Spain,2,2020-02-20
+西班牙,Spain,2,2020-02-21
+西班牙,Spain,2,2020-02-22
+西班牙,Spain,2,2020-02-23
+西班牙,Spain,2,2020-02-24
 西班牙,Spain,3,2020-02-25
 西班牙,Spain,9,2020-02-26
 西班牙,Spain,13,2020-02-27
 西班牙,Spain,25,2020-02-28
 西班牙,Spain,41,2020-02-29
 西班牙,Spain,74,2020-03-01
+西班牙,Spain,74,2020-03-02
 西班牙,Spain,150,2020-03-03
 西班牙,Spain,179,2020-03-04
+西班牙,Spain,248,2020-03-05
+西班牙,Spain,345,2020-03-06
