@@ -52,7 +52,7 @@ function draw(data) {
         name_list.push(e.name);
       }
     });
-  var baseTime = 3000;
+  var baseTime = 1000;
 
   // 选择颜色
   function getColor(d) {
@@ -574,7 +574,8 @@ function draw(data) {
       .duration(2490 * interval_time)
       .text(function(d) {
         if (use_type_info) {
-          return d[divide_by] + "-" + d.name;
+          // return d[divide_by] + "-" + d.name;
+          return d.name;
         }
         return d.name;
       })

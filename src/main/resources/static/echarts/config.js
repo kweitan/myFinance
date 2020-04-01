@@ -30,7 +30,7 @@
   reverse: false,
 
   // 类型根据什么字段区分？如果是name，则关闭类型显示
-  divide_by: "type",
+  divide_by: "name",
 
   // 颜色根据什么字段区分？
   divide_color_by: "name",
@@ -56,7 +56,7 @@
   itemLabel: "",
 
   // right label
-  typeLabel: "海外疫情发展过程",
+  typeLabel: "海外疫情发展趋势",
 
   // 榜首项目信息的水平位置 。
   // Top item information horizontal location
@@ -126,7 +126,7 @@
   enter_from_0: true,
 
   // 如果所有数字都很大，导致拉不开差距则开启此项使得坐标原点变换为（最小值）*2-（最大值）
-  big_value: true,
+  big_value: false,
 
   // 如果要使用半对数坐标，则开启此项
   use_semilogarithmic_coordinate: false,
@@ -163,7 +163,7 @@
   background_color: "#FFFFFF",
 
   // 矩形柱是否为圆角矩形
-  rounded_rectangle: true,
+  rounded_rectangle: false,
 
   // 是否显示x轴轴线
   show_x_tick: true,

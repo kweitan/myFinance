@@ -38,7 +38,9 @@ public class Crawler {
         map.put("United States","美国") ;
         map.put("Singapore","新加坡") ;
         map.put("United Kingdom","英国") ;
-
+        map.put("Switzerland","瑞士") ;
+        map.put("Netherlands","荷兰") ;
+        map.put("Austria","奥地利") ;
 
 
         Iterator<Map.Entry<String, String>> entries = map.entrySet().iterator();
