@@ -2,6 +2,7 @@ package com.sinjee.test;
 
 import com.sinjee.tools.GsonUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
@@ -19,12 +20,17 @@ import java.util.Map;
 public class Crawler {
 
     public static void  main(String[] args){
-        crawlerVis() ;
+        crawler() ;
     }
 
     //爬取数据
-    public static void crawlerVis(){
-        RestTemplate restTemplate = new RestTemplate();
+    public static void crawler(){
+        SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+        requestFactory.setConnectTimeout(60*1000);
+        requestFactory.setReadTimeout(60*1000);
+
+        RestTemplate restTemplate = new RestTemplate(requestFactory);
+//        restTemplate.getRequestFactory().
 
         Map<String,String> map = new HashMap<>() ;
 
