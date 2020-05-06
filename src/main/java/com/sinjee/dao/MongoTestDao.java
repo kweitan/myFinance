@@ -40,7 +40,7 @@ public class MongoTestDao {
     /**
      * 根据用户名查询对象
      * @param userName
-     * @return
+     * @return,,
      */
     public List<MongoTestEntity> findMongoTestByName(String userName){
         Query query = new Query(Criteria.where("userName").is(userName)) ;

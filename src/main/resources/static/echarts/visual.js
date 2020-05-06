@@ -351,9 +351,9 @@ function draw(data) {
 
   function redraw() {
     if (currentData.length == 0) return;
-    // yScale
-    //     .domain(currentData.map(d => d.name).reverse())
-    //     .range([innerHeight, 0]);
+    yScale
+        .domain(currentData.map(d => d.name).reverse())
+        .range([innerHeight, 0]);
     // x轴范围
     // 如果所有数字很大导致拉不开差距
 

@@ -1,3 +1,7 @@
 https://api.inews.qq.com/newsqa/v1/query/pubished/daily/list?country=%E6%84%8F%E5%A4%A7%E5%88%A9&
 
 https://api.inews.qq.com/newsqa/v1/query/pubished/daily/list?country=伊朗
+
+
+意大利，伊朗已经失控，韩国控制住了，欧洲已经沦陷
+

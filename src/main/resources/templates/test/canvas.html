@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>海报生成</title>
+</head>
+<body style="margin: 0;border: 0;">
+<canvas id="myCanvas" style="width: 690px;height:1085px;">
+    Your browser does not support the canvas element.
+</canvas>
+</body>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath(); //开始绘制
+    var sharing=new Image()
+    sharing.src="./sharing.png"
+    //画一张背景图
+    ctx.drawImage(sharing, 0, 0, 690, 1085)
+    // ctx.save(); // 先保存状态 已便于画完圆再用
+
+
+    let banner_x = 10 ;
+    let banner_y = 10 ;
+    let banner_width = 670 ;
+    let banner_height = 670 ;
+
+    var banner=new Image()
+    banner.src="./banner.png"
+    //画一张banner图
+    ctx.drawImage(banner, banner_x, banner_y, banner_width, banner_height)
+
+    //画价格
+    let price_x = 10 ;
+    let price_y = 700 ;
+    ctx.restore(); //恢复之前保存的绘图上下文状态 可以继续绘制
+    ctx.fillStyle = '#fe002f'; // 文字颜色
+    ctx.font = '26px serif' ; // 文字字号
+    ctx.fillText("￥", price_x, price_y); // 绘制文字
+
+    ctx.font = '32px serif' ; // 文字字号
+    ctx.fillText("1040.00", price_x+2, price_y); // 绘制文字
+
+    ctx.closePath();
+
+</script>
+</html>

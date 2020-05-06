@@ -31,7 +31,7 @@ public class CrawlerImageInfo implements Runnable {
 
     public void handlerInfo(String mainUrl){
 
-        String path="G:/file/beautify/";
+        String path="G:/file/pic/";
 
         //http://www.umei.cc/p/gaoqing/cn/
         Document doc = null ;
